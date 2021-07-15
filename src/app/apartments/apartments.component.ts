@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { Apartment } from '../apartment';
-import { APARTMENTS } from '../mock-apartments';
 import { ApartmentService } from '../apartment.service';
 
 @Component({
@@ -9,8 +8,7 @@ import { ApartmentService } from '../apartment.service';
   styleUrls: ['./apartments.component.css']
 })
 export class ApartmentsComponent implements OnInit {
-  //apartments: Apartment[] = [];
-  apartments = APARTMENTS;
+  apartments: Apartment[] = [];
 
   constructor(private apartmentService: ApartmentService) { }
 
@@ -19,8 +17,28 @@ export class ApartmentsComponent implements OnInit {
   }
 
   getApartments() : void {
-    this.apartmentService.getApartments().
-    subscribe(aparments => this.apartments = aparments);
+    this.apartments = this.apartmentService.getApartments();
+  }
+
+  add(name: string, address: string, monthlyRent: string, sqft: string, bedrooms: string, bathrooms: string, comments: string): void {
+    var index = "1";
+    if(localStorage.getItem("index") != undefined) {
+      index = localStorage.getItem("index")!.toString();
+    }
+    else {
+      localStorage.setItem("index", "1");
+    }
+    var id :number = +index;
+    var mr : number  = +monthlyRent;
+    var s : number = +sqft;
+    var bed : number = +bedrooms;
+    var bath : number = +bathrooms;
+    this.apartmentService.addApartment({id: id,name: name, address: address,
+      monthlyRent: mr, sqft: s, bedrooms: bed,
+      bathrooms: bath, comments: comments} as Apartment);
+    this.apartments.push({id: id,name: name, address: address,
+      monthlyRent: mr, sqft: s, bedrooms: bed,
+      bathrooms: bath, comments: comments} as Apartment);
   }
 
 }

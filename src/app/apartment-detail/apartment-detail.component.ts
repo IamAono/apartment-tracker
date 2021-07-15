@@ -29,8 +29,7 @@ export class ApartmentDetailComponent implements OnInit {
 
   getApartment(): void {
     const id = Number(this.route.snapshot.paramMap.get('id'));
-    this.apartmentService.getApartment(id)
-      .subscribe(apartment => this.apartment = apartment);
+    this.apartmentService.getApartment(id);
   }
 
 }
