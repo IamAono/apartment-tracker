@@ -28,7 +28,11 @@
     <br>
     <br>
     <label for="apartment-comments">Comments: </label>
-    <input id="apartment-comments" [(ngModel)]="apartment.comments" placeholder="comments">
+    <textarea id="apartment-comments" cols="40" rows="3" [(ngModel)]="apartment.comments" placeholder="comments"></textarea>
   </div>
+  <button (click)="save()">save</button>
+  <br>
+  <button (click)="delete()">delete</button>
+  <br>
   <button (click)="goBack()">go back</button>
 </div>

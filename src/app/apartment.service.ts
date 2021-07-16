@@ -28,7 +28,7 @@ export class ApartmentService {
     return apartment;
   }
 
-  addApartment(apartment: Apartment) {
+  addApartment(apartment: Apartment): void {
     if(localStorage.getItem("index") != undefined) {
       this.index = localStorage.getItem("index")!.toString();
     }
@@ -41,5 +41,13 @@ export class ApartmentService {
     y++;
     this.index = y.toString();
     localStorage.setItem("index", this.index);
+  }
+
+  updateApartment(apartment: Apartment): void {
+    localStorage.setItem(apartment.id.toString(), JSON.stringify(apartment));
+  }
+
+  deleteApartment(apartment: Apartment): void {
+    localStorage.removeItem(apartment.id.toString())
   }
 }

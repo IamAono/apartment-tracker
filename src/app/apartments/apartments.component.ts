@@ -36,9 +36,6 @@ export class ApartmentsComponent implements OnInit {
     this.apartmentService.addApartment({id: id,name: name, address: address,
       monthlyRent: mr, sqft: s, bedrooms: bed,
       bathrooms: bath, comments: comments} as Apartment);
-    this.apartments.push({id: id,name: name, address: address,
-      monthlyRent: mr, sqft: s, bedrooms: bed,
-      bathrooms: bath, comments: comments} as Apartment);
   }
 
 }
