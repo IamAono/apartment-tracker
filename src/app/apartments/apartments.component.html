@@ -1,5 +1,27 @@
 <h2>My Apartments</h2>
 <div>
+  <h2>Sort by: </h2>
+  <button class = "sortByRent" (click)="sortByRent();">Monthly Rent</button>
+  <button class = "sortBySqft" (click)="sortBySqft();">Sqft</button>
+  <button class = "sortByBedrooms" (click)="sortByBed();">Bedrooms</button>
+  <button class = "sortByBathrooms" (click)="sortByBath();">Bathrooms</button>
+  <br>
+  <br>
+  <button class = "sortByRent" (click)="sortByRentDesc();">Monthly Rent Desc.</button>
+  <button class = "sortBySqft" (click)="sortBySqftDesc();">Sqft Desc.</button>
+  <button class = "sortByBedrooms" (click)="sortByBedDesc();">Bedrooms Desc.</button>
+  <button class = "sortByBathrooms" (click)="sortByBathDesc();">Bathrooms Desc.</button>
+</div>
+<br>
+<ul class="apartments">
+  <li *ngFor="let apartment of apartments">
+    <a routerLink="/detail/{{apartment.id}}">
+      <span class="badge">{{apartment.id}}</span> {{apartment.name}}
+    </a>
+  </li>
+</ul>
+<div>
+  <h2>To add an apartment, fill in information below. </h2>
   <label for="apartment-name">Apartment name: </label>
   <input id="apartment-name" #apartmentName>
   <br>
@@ -33,10 +55,3 @@
     Add apartment
   </button>
 </div>
-<ul class="apartments">
-  <li *ngFor="let apartment of apartments">
-    <a routerLink="/detail/{{apartment.id}}">
-      <span class="badge">{{apartment.id}}</span> {{apartment.name}}
-    </a>
-  </li>
-</ul>

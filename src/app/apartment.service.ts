@@ -19,7 +19,6 @@ export class ApartmentService {
       }
       this.apartments.push(JSON.parse(localStorage.getItem(key)!.toString()));
     }
-    console.log("apartments: ",this.apartments.length);
     return this.apartments;
   }
 

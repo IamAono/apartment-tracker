@@ -38,4 +38,37 @@ export class ApartmentsComponent implements OnInit {
       bathrooms: bath, comments: comments} as Apartment);
   }
 
+  sortByRent(): void {
+    this.apartments.sort((a,b) => a.monthlyRent < b.monthlyRent ? -1 : 1);
+  }
+
+  sortByRentDesc(): void {
+    this.apartments.sort((a,b) => a.monthlyRent > b.monthlyRent ? -1 : 1);
+  }
+
+  sortBySqft(): void {
+    this.apartments.sort((a,b) => a.sqft < b.sqft ? -1 : 1);
+  }
+
+  sortBySqftDesc(): void {
+    this.apartments.sort((a,b) => a.sqft > b.sqft ? -1 : 1);
+  }
+
+  sortByBed(): void {
+    this.apartments.sort((a,b) => a.bedrooms < b.bedrooms ? -1 : 1);
+  }
+
+  sortByBedDesc(): void {
+    this.apartments.sort((a,b) => a.bedrooms > b.bedrooms ? -1 : 1);
+  }
+
+  sortByBath(): void {
+    this.apartments.sort((a,b) => a.bathrooms < b.bathrooms ? -1 : 1);
+  }
+
+  sortByBathDesc(): void {
+    this.apartments.sort((a,b) => a.bathrooms > b.bathrooms ? -1 : 1);
+  }
+
+
 }
