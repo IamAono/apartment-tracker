@@ -1,4 +1,4 @@
-# ApartmentTracker (WORK IN PROGRESS)
+# ApartmentTracker
 
 This web application is for viewing apartments you are interested in. You can add, edit, delete, and sort them.
 
