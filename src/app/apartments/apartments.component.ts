@@ -36,38 +36,39 @@ export class ApartmentsComponent implements OnInit {
     this.apartmentService.addApartment({id: id,name: name, address: address,
       monthlyRent: mr, sqft: s, bedrooms: bed,
       bathrooms: bath, comments: comments} as Apartment);
+    alert("The apartment has been added, scroll up to the top to see it.")
   }
 
   sortByRent(): void {
-    this.apartments.sort((a,b) => a.monthlyRent < b.monthlyRent ? -1 : 1);
+    this.apartmentService.sortByRent();
   }
 
   sortByRentDesc(): void {
-    this.apartments.sort((a,b) => a.monthlyRent > b.monthlyRent ? -1 : 1);
+    this.apartmentService.sortByRentDesc();
   }
 
   sortBySqft(): void {
-    this.apartments.sort((a,b) => a.sqft < b.sqft ? -1 : 1);
+    this.apartmentService.sortBySqft();
   }
 
   sortBySqftDesc(): void {
-    this.apartments.sort((a,b) => a.sqft > b.sqft ? -1 : 1);
+    this.apartmentService.sortBySqftDesc();
   }
 
   sortByBed(): void {
-    this.apartments.sort((a,b) => a.bedrooms < b.bedrooms ? -1 : 1);
+    this.apartmentService.sortByBed();
   }
 
   sortByBedDesc(): void {
-    this.apartments.sort((a,b) => a.bedrooms > b.bedrooms ? -1 : 1);
+    this.apartmentService.sortByBedDesc();
   }
 
   sortByBath(): void {
-    this.apartments.sort((a,b) => a.bathrooms < b.bathrooms ? -1 : 1);
+    this.apartmentService.sortByBath();
   }
 
   sortByBathDesc(): void {
-    this.apartments.sort((a,b) => a.bathrooms > b.bathrooms ? -1 : 1);
+    this.apartmentService.sortByBathDesc();
   }
 
 

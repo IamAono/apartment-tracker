@@ -1,4 +1,3 @@
-<h2>My Apartments</h2>
 <div>
   <h2>Sort by: </h2>
   <button class = "sortByRent" (click)="sortByRent();">Monthly Rent</button>
@@ -13,6 +12,7 @@
   <button class = "sortByBathrooms" (click)="sortByBathDesc();">Bathrooms Desc.</button>
 </div>
 <br>
+<h2>My Apartments</h2>
 <ul class="apartments">
   <li *ngFor="let apartment of apartments">
     <a routerLink="/detail/{{apartment.id}}">
